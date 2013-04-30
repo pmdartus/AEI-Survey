@@ -1,4 +1,7 @@
 <%= semantic_form_for @vote do |f| %>
-    <%= f.inputs :email, :choice %>
+    <%= f.inputs do %>
+      <%= f.input :email, :hint => "Addesse mail INSA" %>
+      <%= f.input :choice, :label  => "Choix du logo", :as => :radio, :collection => [1,2,3,4] %>
+    <% end %>
     <%= f.actions :submit %>
   <% end %>
