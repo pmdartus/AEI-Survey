@@ -34,4 +34,22 @@ AEI::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Mail
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
+  #These settings are for the sending out email for active admin and consequently the   devise mailer
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = 
+  {
+    :address            => 'auth.smtp.1and1.fr',
+    :port               => 587,
+    :domain => "1and1.com",
+    :authentication     => :login,
+    :user_name          => 'logo@aei-insa.fr',
+    :password           => 'logoaei'
+}
 end

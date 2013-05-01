@@ -6,7 +6,7 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
     email = @vote.email
-    if (email.include? "insa-lyon") || (email.include? "insa-strasbourg") || (email.include? "insa-toulouse") || (email.include? "insa-rennes.fr")
+    if (email.include? "@insa-lyon") || (email.include? "@insa-strasbourg") || (email.include? "@insa-toulouse") || (email.include? "@insa-rennes.fr")
 
       begin
         tocken_secret = unique_identifier = SecureRandom.hex(7)
@@ -16,11 +16,12 @@ class VotesController < ApplicationController
       @vote.validated = false
       
       if @vote.save
+        ConfirmMailer.conf(@vote).deliver
         redirect_to root_path, notice: 'Confirmation par mail envoye'
       else
         redirect_to root_path, alert: 'Une erreur inatendu est survenue'
       end
-      
+
     else
       redirect_to root_path, alert: 'Veuillez enter une adresse INSA !'
     end
