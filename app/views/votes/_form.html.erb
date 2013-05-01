@@ -1,7 +1,13 @@
-<%= semantic_form_for @vote do |f| %>
-    <%= f.inputs do%>
-      <%= f.input :email %>
-      <%= f.input :choice, :as => :radio, :collection => [1,2,3,4] %>
-    <% end %>
-    <%= f.actions :submit %>
+<%= form_for @vote do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :choice %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
   <% end %>
