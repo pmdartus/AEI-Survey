@@ -18,12 +18,13 @@ class VotesController < ApplicationController
       if @vote.save
         redirect_to root_path, notice: 'Confirmation par mail envoye'
       else
-        redirect_to root_path, notice: 'Une erreur inatendu est survenue'
+        redirect_to root_path, alert: 'Une erreur inatendu est survenue'
       end
+      
     else
-      redirect_to root_path, notice: 'Veuillez enter une adresse INSA !'
-    
+      redirect_to root_path, alert: 'Veuillez enter une adresse INSA !'
     end
+
   end
 
   def validate
@@ -36,11 +37,11 @@ class VotesController < ApplicationController
         vote.save
         redirect_to root_path, notice: "Le vote a ete confirme"
       else
-        redirect_to root_path, notice: "Le vote a deja ete confirme !"
+        redirect_to root_path, alert: "Le vote a deja ete confirme !"
       end
 
     else
-      redirect_to root_path, notice: "Confirmation invalide !"
+      redirect_to root_path, alert: "Confirmation invalide !"
     end
 
   end
