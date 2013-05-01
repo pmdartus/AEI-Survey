@@ -64,4 +64,23 @@ AEI::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+    # Mail
+  config.action_mailer.default_url_options = { :host => 'aei-survey.herokuapp.com' }
+
+
+  #These settings are for the sending out email for active admin and consequently the   devise mailer
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = 
+  {
+    :address            => 'auth.smtp.1and1.fr',
+    :port               => 587,
+    :domain => "1and1.com",
+    :authentication     => :login,
+    :user_name          => 'logo@aei-insa.fr',
+    :password           => 'logoaei'
+  }
+
 end

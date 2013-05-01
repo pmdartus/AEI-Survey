@@ -51,5 +51,5 @@ AEI::Application.configure do
     :authentication     => :login,
     :user_name          => 'logo@aei-insa.fr',
     :password           => 'logoaei'
-}
+  }
 end
