@@ -9,13 +9,52 @@
 <body>
 
 <div class="container">
+
+  <div class="masthead">
+    <ul class="nav nav-pills pull-right">
+      <li class="active"><a href="#">Présenation</a></li>
+      <li><a href="#proposition">Propositions</a></li>
+      <li><a href="#vote">Vote</a></li>
+    </ul>
+    <h3 class="muted">Concours Logo</h3>
+  </div>
+
   <% if flash[:notice] %>
     <div class="alert alert-info"><%= flash[:notice] %></div>
   <% end %>
   <% if flash[:alert] %>
     <div class="alert alert-error"><%= flash[:alert] %></div>
   <% end %>
-  
+
+  <hr>
+
+  <div class="jumbotron">
+    <h1>Vote pour le prochain logo de ton BdE/Amincale !</h1>
+    <p class="lead">Phase finale du concours de création de logo des BdE/Amicales des INSA.</p>
+  </div>
+
+  <hr>
+
+  <div class="presentation row-fluid" >
+    <h2>Présentation & réglement du concours</h2>
+
+    <div class='span6'>
+      <h4>Nos valeurs</h4>
+      <p>Les logos ont étaient crés selon les critère suivants : Simplicité, Sérieux, Unicité et du fun <small>( beaucoup de fun )</small></p>
+      <h4>Les déclinaisons</h4>
+      <p>Trois déclinaison du logos doivent être proposés : un logo BdE, un logo Amicale, un logo pour l'AEI.</p>
+    </div>
+
+    <div class='span5'>
+      <h4>La réutilisabilité</h4>
+      <p>Une possibilité de conversion du logo présenté en charte graphique doit être possibile à partir du logo.</p>
+      <h4>Technique</h4>
+      <p>Pas plus de 3 couleurs, adaptable en N&B, lisible même petit.</p>
+    </div>
+  </div>
+
+  <hr>
+
   <%= yield %>
 </div>
 

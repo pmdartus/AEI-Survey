@@ -1,32 +1,11 @@
-<h1>Vote pour le concours de logo AEI</h1>
+<h2 id="proposition">Présentation des proposition</h2>
 
-<h2>Information relative à la phase finale</h2>
-<p>
-  <h3>Globalement, nous attendons trois logos :</h3>
-  <ul>
-    <li>deux logos pour les bureaux locaux; i.e. un logo "BdE insa", et un "Amicale insa"</li>
-    <li>un logo national, pour l'AEI</li>
-  </ul>
-  Ensuite, pour ces trois logos, divers variantes sont attendues, comme expliqué plus bas.
-</p>
-
-<p>
-  <h3>Détails :</h3>
-  <ul>
-    <li>Seul les mots "insa" et "bde" (ou "amicale") sont obligatoires pour logos locaux.</li>
-    <li>Le nom de l'association (bde ou amicale) doit être prépondérant par rapport au mot "insa". Nous ne créons pas le logo des insa, nous sommes avant tout des bureaux d'élèves.</li>
-    <li>Pas d'indication du nom de la ville dans les logos de base.</li>
-  </ul>
-</p>
-
-<h2>Présentation des proposition</h2>
-
-<div clas="prop">
+<div clas="prop well">
   <h3>Proposition 1</h3>
     <%= image_tag asset_path('Braice/Logo aeir.png'), class: "img-polaroid" %>
 </div>
 
-<div clas="prop">
+<div clas="prop well">
   <h3>Proposition 2</h3>
   
 </div>
@@ -43,4 +22,6 @@
 
 <hr>
 
-<%= render 'form'  %>
+<div id="vote">
+  <%= render 'form'  %>
+</div>

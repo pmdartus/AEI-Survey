@@ -11,5 +11,6 @@
  *= require_self
  *= require twitter/bootstrap
  *= require formtastic
+ *= require twitter/bootstrap/_responsive
  *= require_tree .
  */
