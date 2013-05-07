@@ -1,27 +1,79 @@
-<h2 id="proposition">Présentation des proposition</h2>
+<div  id="proposition">
+  <h2>Propositions</h2>
 
-<div clas="prop well">
-  <h3>Proposition 1</h3>
-    <%= image_tag asset_path('Braice/Logo aeir.png'), class: "img-polaroid" %>
-</div>
+  <div class="row-fluid">
+    <ul class="thumbnails">
 
-<div clas="prop well">
-  <h3>Proposition 2</h3>
-  
-</div>
+      <li class="span5">
+        <div class="thumbnail">
+          <%= image_tag asset_path"brice/vignette.png" %>
 
-<div clas="prop">
-  <h3>Proposition 3</h3>
-  <p>BLAALBLBLa</p>
-</div>
+          <div class="btn-group">
+            <a class="btn" ><i class="icon-info-sign"></i> En savoir plus</a>
+            <a class="btn btn-vote" href="#vote" data-choice="1"><i class="icon-thumbs-up"></i> Voter</a>
+          </div>
 
-<div clas="prop">
-  <h3>Proposition 4</h3>
-  <p>BLAALBLBLa</p>
+        </div>
+      </li>
+
+      <li class="span5">
+        <div class="thumbnail">
+          <%= image_tag asset_path"charrier/vignette.png" %>
+          <div class="btn-group">
+            <a class="btn" ><i class="icon-info-sign"></i> En savoir plus</a>
+            <a class="btn btn-vote" href="#vote" data-choice="2"><i class="icon-thumbs-up"></i> Voter</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="span5">
+        <div class="thumbnail">
+          <%= image_tag asset_path"gaelus/vignette.png" %>
+          <div class="btn-group">
+            <a class="btn" ><i class="icon-info-sign"></i> En savoir plus</a>
+            <a class="btn btn-vote" href="#vote" data-choice="3"><i class="icon-thumbs-up"></i> Voter</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="span5">
+        <div class="thumbnail">
+          <%= image_tag asset_path"pm/vignette.jpg" %>
+          <div class="btn-group">
+            <a class="btn" ><i class="icon-info-sign"></i> En savoir plus</a>
+            <a class="btn btn-vote" href="#vote" data-choice="4"><i class="icon-thumbs-up"></i> Voter</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="span5">
+        <div class="thumbnail">
+          <%= image_tag asset_path"germain/vignette.png" %>
+          <div class="btn-group">
+            <a class="btn" ><i class="icon-info-sign"></i> En savoir plus</a>
+            <a class="btn btn-vote" href="#vote" data-choice="5"><i class="icon-thumbs-up"></i> Voter</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="span5">
+        <div class="thumbnail">
+          <%= image_tag asset_path"roubiere/vignette.png" %>
+          <div class="btn-group">
+            <a class="btn" ><i class="icon-info-sign"></i> En savoir plus</a>
+            <a class="btn btn-vote" href="#vote" data-choice="6"><i class="icon-thumbs-up"></i> Voter</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
 </div>
 
 <hr>
 
 <div id="vote">
+  <h2>Vote</h2>
   <%= render 'form'  %>
 </div>

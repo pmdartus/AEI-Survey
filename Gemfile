@@ -21,5 +21,5 @@ group :assets do
 end
 
 
-gem 'formtastic'  
+gem 'formtastic-bootstrap'  
 gem 'jquery-rails'

@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= holder
+//= require holder
 //= require_tree .

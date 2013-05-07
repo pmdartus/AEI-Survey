@@ -6,7 +6,7 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
     email = @vote.email
-    if (email.include? "@insa-lyon") || (email.include? "@insa-strasbourg") || (email.include? "@etud.insa-toulouse") || (email.include? "@insa-rennes.fr")
+    if (email.include? "@insa-lyon") || (email.include? "@insa-strasbourg") || (email.include? "@etud.insa-toulouse") || (email.include? "@insa-rennes")
 
       begin
         tocken_secret = unique_identifier = SecureRandom.hex(7)
