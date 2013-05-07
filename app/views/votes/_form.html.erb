@@ -1,7 +1,9 @@
  <%= semantic_form_for @vote do |f| %>
     <%= f.inputs do %>
-      <%= f.input :email %>
+      <%= f.input :email, :hint => "Votre adresse mail INSA pour la validation du vote." %>
       <%= f.input :choice, :as => :hidden  %>
     <% end %>
-      <%= f.actions %>
+      <%= f.actions  do %>
+        <%= f.action :submit, :button_html => { :class => 'btn btn-info btn-large'} %>
+      <% end %>
   <% end %>
