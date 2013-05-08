@@ -1,6 +1,4 @@
-// Place all the styles related to the votes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bourbon";
 
 .container {
   width: 900px;
@@ -23,4 +21,10 @@
     font-size: 4em;
     line-height: 60px;
   }
+}
+
+.selected {
+  -webkit-box-shadow: 2px 2px 5px 3px #49afcd;
+  -moz-box-shadow: 2px 2px 5px 3px #49afcd;
+  box-shadow: 2px 2px 5px 3px #49afcd;
 }

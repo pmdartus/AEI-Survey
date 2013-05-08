@@ -9,6 +9,8 @@ jQuery ->
   $('.btn-vote').click ->
     $('.btn-vote').removeClass('btn-info')
     $(this).addClass("btn-info")
+    $('.selected').removeClass('selected')
+    $(this).closest('.thumbnail').addClass('selected')
     choice = parseInt($(this).attr('data-choice'))
     $('#vote_choice').val(choice)
 
