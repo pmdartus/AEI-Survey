@@ -19,7 +19,14 @@ class VotesController < ApplicationController
         ConfirmMailer.conf(@vote).deliver
         redirect_to root_path, notice: 'Confirmation par mail envoye'
       else
-        redirect_to root_path, alert: 'Une erreur inatendu est survenue'
+        find_vote = Vote.find_by_email( @vote.email )
+        if find_vote.validated == false 
+          find_vote.choice = @vote.choice
+          find_vote.save
+          redirect_to root_path, notice: "Vote mis a jours"
+        else
+          redirect_to root_path, alert: "L'adresse a deja ete utilisee !"
+        end
       end
 
     else
