@@ -6,31 +6,37 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
     email = @vote.email
-    if (email.include? "@insa-lyon") || (email.include? "@insa-strasbourg") || (email.include? "@etud.insa-toulouse") || (email.include? "@insa-rennes")
-
-      begin
-        tocken_secret = unique_identifier = SecureRandom.hex(7)
-      end while Vote.exists?(:tocken => tocken_secret)
-
-      @vote.tocken = tocken_secret
-      @vote.validated = false
-      
-      if @vote.save
-        ConfirmMailer.conf(@vote).deliver
-        redirect_to root_path, notice: 'Confirmation par mail envoye'
-      else
-        find_vote = Vote.find_by_email( @vote.email )
-        if find_vote.validated == false 
-          find_vote.choice = @vote.choice
-          find_vote.save
-          redirect_to root_path, notice: "Vote mis a jours"
-        else
-          redirect_to root_path, alert: "L'adresse a deja ete utilisee !"
-        end
-      end
-
+    if @vote.choice == nil
+      redirect_to root_path, notice: 'Il faut quand meme choisir quelque chose pour voter =)'
     else
-      redirect_to root_path, alert: 'Veuillez enter une adresse INSA !'
+      if (email.include? "@insa-lyon") || (email.include? "@insa-strasbourg") || (email.include? "@etud.insa-toulouse") || (email.include? "@insa-rennes")
+
+        begin
+          tocken_secret = unique_identifier = SecureRandom.hex(7)
+        end while Vote.exists?(:tocken => tocken_secret)
+
+        @vote.tocken = tocken_secret
+        @vote.validated = false
+        
+        if @vote.save
+          ConfirmMailer.conf(@vote).deliver
+          redirect_to root_path, notice: 'Confirmation par mail envoye'
+        else
+          find_vote = Vote.find_by_email( @vote.email )
+          if find_vote != nil && find_vote.validated == false 
+            find_vote.choice = @vote.choice
+            find_vote.tocken = tocken_secret
+            find_vote.save
+            ConfirmMailer.conf(@vote).deliver
+            redirect_to root_path, notice: "Vote mis a jours"
+          else
+            redirect_to root_path, alert: "L'adresse a deja ete utilisee !"
+          end
+        end
+
+      else
+        redirect_to root_path, alert: 'Veuillez entrer une adresse INSA !'
+      end      
     end
 
   end
