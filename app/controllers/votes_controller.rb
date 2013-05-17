@@ -9,7 +9,7 @@ class VotesController < ApplicationController
     if @vote.choice == nil
       redirect_to root_path, notice: 'Il faut quand meme choisir quelque chose pour voter =)'
     else
-      if (email.include? "@insa-lyon") || (email.include? "@insa-strasbourg") || (email.include? "@etud.insa-toulouse") || (email.include? "@insa-rennes") || (email.include? '@ensi-bourges') || (email.include? '@univ-tours.fr')
+      if (email.include? "@insa-lyon") || (email.include? "@insa-strasbourg") || (email.include? "@etud.insa-toulouse") || (email.include? "@insa-rennes") || (email.include? "@insa-rouen") || (email.include? '@ensi-bourges') || (email.include? '@etu.enivl')
 
         begin
           tocken_secret = unique_identifier = SecureRandom.hex(7)
